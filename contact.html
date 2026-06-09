@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — Malindi Cleaners</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="contact.html">
+
+  <div id="site-header"></div>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <div class="breadcrumb"><a href="index.html">Home</a> / Contact</div>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="contact-grid">
+        <div class="reveal">
+          <span class="section-label">Get in Touch</span>
+          <h2 class="section-title">We'd Love to Hear From You</h2>
+          <p style="color: var(--text-light); margin-bottom: 32px;">Have a question or ready to book? Fill out the form and our team will respond within 2 hours during business hours.</p>
+
+          <div class="contact-info-card">
+            <div class="icon">📞</div>
+            <div><h4>Phone</h4><p><a href="tel:+254141580500">0141 580 500</a></p></div>
+          </div>
+          <div class="contact-info-card">
+            <div class="icon">💬</div>
+            <div><h4>WhatsApp</h4><p><a href="https://wa.me/254141580500" target="_blank" rel="noopener noreferrer">Message us on WhatsApp</a></p></div>
+          </div>
+          <div class="contact-info-card">
+            <div class="icon">📱</div>
+            <div><h4>Social Media</h4><p>@malindicleaningandhousehelpplacement<br>Instagram · Facebook · TikTok</p></div>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" onsubmit="event.preventDefault(); alert('Thank you! We will contact you shortly.');">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" required placeholder="John">
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" required placeholder="Doe">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="john@example.com">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="+254 7XX XXX XXX">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="service">Service Needed</label>
+            <select id="service" name="service">
+              <option value="">Select a service</option>
+              <option>Basic Cleaning</option>
+              <option>Deep Cleaning</option>
+              <option>Laundry Services</option>
+              <option>Airbnb / Vacation Rental Cleaning</option>
+              <option>Office &amp; Commercial Cleaning</option>
+              <option>Post-Construction Cleaning</option>
+              <option>Move-in / Move-out Cleaning</option>
+              <option>Same-day &amp; Emergency Cleaning</option>
+              <option>Monthly Cleaning Subscription</option>
+              <option>Eco-friendly Cleaning</option>
+              <option>Live-in House Help</option>
+              <option>Live-out House Help</option>
+              <option>Nanny / Babysitter</option>
+              <option>Caregiver</option>
+              <option>Cook</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Tell us about your cleaning needs..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 0 0 90px;">
+    <div class="container reveal">
+      <div style="border-radius: var(--radius-lg); overflow: hidden; height: 280px; background: var(--bg-soft); display: flex; align-items: center; justify-content: center; color: var(--text-light);">
+        <div style="text-align: center;">
+          <div style="font-size: 3rem; margin-bottom: 12px;">💬</div>
+          <p>Reach us on <a href="tel:+254141580500">0141 580 500</a> or <a href="https://wa.me/254141580500" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
+          <p style="margin-top: 8px;">@malindicleaningandhousehelpplacement</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

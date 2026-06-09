@@ -1,0 +1,87 @@
+{
+  "name": "Malindi Cleaners Motion System",
+  "version": "1.0",
+  "description": "Mirror these tokens in Figma Variables (Motion page) and prototype with Smart Animate.",
+  "tokens": {
+    "duration": {
+      "motion-fast": { "value": "200ms", "figma": "Duration / Fast" },
+      "motion-base": { "value": "400ms", "figma": "Duration / Base" },
+      "motion-slow": { "value": "700ms", "figma": "Duration / Slow" },
+      "motion-stagger": { "value": "80ms", "figma": "Delay / Stagger step" }
+    },
+    "easing": {
+      "ease-standard": { "value": "cubic-bezier(0.4, 0, 0.2, 1)", "figma": "Ease / Standard" },
+      "ease-out": { "value": "cubic-bezier(0.16, 1, 0.3, 1)", "figma": "Ease / Out (entries)" },
+      "ease-in": { "value": "cubic-bezier(0.7, 0, 0.84, 0)", "figma": "Ease / In (exits)" },
+      "ease-spring": { "value": "cubic-bezier(0.34, 1.56, 0.64, 1)", "figma": "Spring / Interactive" }
+    },
+    "spatial": {
+      "reveal-distance": { "value": "24px", "figma": "Y offset between frames" },
+      "depth-near": { "value": 1, "figma": "Scale / Focused layer" },
+      "depth-mid": { "value": 0.96, "figma": "Scale / Entering layer" },
+      "depth-far": { "value": 0.92, "figma": "Scale / Background layer" },
+      "lift-distance": { "value": "6px", "figma": "Y lift on card hover" }
+    }
+  },
+  "components": [
+    {
+      "name": "Reveal / Default",
+      "properties": { "opacity": 0, "y": 24, "scale": 0.96 },
+      "transition": { "duration": "motion-slow", "easing": "ease-out" }
+    },
+    {
+      "name": "Reveal / Visible",
+      "properties": { "opacity": 100, "y": 0, "scale": 1 },
+      "note": "Smart Animate from Default. Match layer names exactly."
+    },
+    {
+      "name": "Card / Default",
+      "properties": { "y": 0, "scale": 1, "shadow": "none" }
+    },
+    {
+      "name": "Card / Hover",
+      "properties": { "y": -6, "scale": 1, "shadow": "shadow-md" },
+      "transition": { "duration": "motion-base", "easing": "ease-spring" }
+    },
+    {
+      "name": "Hero / Column",
+      "variants": ["left", "center", "right"],
+      "stagger": ["0ms", "120ms", "240ms"],
+      "transition": { "duration": "motion-slow", "easing": "ease-out" }
+    },
+    {
+      "name": "Hero / Float Badge",
+      "stagger": ["560ms", "680ms"],
+      "transition": { "duration": "motion-base", "easing": "ease-spring" }
+    }
+  ],
+  "prototypeFlows": [
+    {
+      "name": "Page load — Hero",
+      "frames": ["Hero / Default", "Hero / Loaded"],
+      "trigger": "After delay 0ms",
+      "animation": "Smart Animate",
+      "staggerChildren": true
+    },
+    {
+      "name": "Scroll reveal — Grid",
+      "frames": ["Section / Hidden", "Section / Visible"],
+      "trigger": "While scrolling into view",
+      "animation": "Smart Animate",
+      "delayIncrement": "80ms per sibling"
+    },
+    {
+      "name": "Spatial focus switch",
+      "frames": ["Panel A focused", "Panel B focused"],
+      "note": "Active panel scale 100%, inactive 92%, opacity 70%, blur background"
+    }
+  ],
+  "cssMapping": {
+    "Smart Animate Y": "transform: translateY()",
+    "Smart Animate opacity": "opacity",
+    "Smart Animate scale": "transform: scale()",
+    "Spring": "var(--ease-spring)",
+    "Stagger delay": "var(--motion-delay) via JS",
+    "Depth parallax": "mousemove on .hero-cleanna.hero-load"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "malindi-cleaners",
+  "version": "1.0.0",
+  "description": "Malindi Cleaners — Professional cleaning service website (Cleanna-inspired)",
+  "scripts": {
+    "start": "python3 -m http.server 3000",
+    "dev": "python3 -m http.server 3000"
+  },
+  "keywords": [
+    "cleaning",
+    "malindi",
+    "website"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "playwright": "^1.60.0"
+  }
+}
